@@ -4,10 +4,10 @@
 
 #include <glm/glm.hpp>
 
-#include <shader.h>
-#include <camera.h>
+#include <render/shader.h>
+#include <render/camera.h>
 #include <sim/particle.h>
-#include <spheremesh.h>
+#include <render/spheremesh.h>
 
 #include <vector>
 #include <memory>

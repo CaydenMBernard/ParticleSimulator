@@ -1,7 +1,5 @@
 #pragma once
-#ifndef TEXTURE_H
-#define TEXTURE_H
+
+#include "shader.h"
 
 unsigned int textureInit(Shader& shader);
-
-#endif

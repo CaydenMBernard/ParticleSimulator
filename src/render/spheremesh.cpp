@@ -1,27 +1,27 @@
 #include <glm/glm.hpp>
 
-#include "shader.h"
-#include "spheremesh.h"
+#include "render/shader.h"
+#include "render/spheremesh.h"
 
 #include <iostream>
 #include <array>
 #include <cmath>
 #include <vector>
 
-void createSphereMesh(Mesh& mesh, int stacks = 20, int slices = 20)
+void createSphereMesh(Mesh& mesh, int stacks, int slices)
 {
     mesh.sphereVertices.reserve((stacks + 1) * (slices + 1) * 8);
     mesh.sphereIndices.reserve(stacks * slices * 6);
 
     for (int i = 0; i <= stacks; ++i)
     {
-        float v = (float)i / (float)stacks;          // 0..1
-        float phi = v * glm::pi<float>();            // 0..PI
+        float v = (float)i / (float)stacks;                 // 0 to 1
+        float phi = v * glm::pi<float>();                   // 0 to PI
 
         for (int j = 0; j <= slices; ++j)
         {
-            float u = (float)j / (float)slices;      // 0..1
-            float theta = u * (glm::pi<float>() * 2.0f); // 0..2PI
+            float u = (float)j / (float)slices;             // 0 to 1
+            float theta = u * (glm::pi<float>() * 2.0f);    // 0 to 2PI
 
             float x = cos(theta) * sin(phi);
             float y = cos(phi);

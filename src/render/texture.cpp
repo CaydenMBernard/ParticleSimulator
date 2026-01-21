@@ -2,8 +2,9 @@
 #include <glfw/glfw3.h>
 #include <stb_image.h>
 
-#include "texture.h"
-#include "renderer.h"
+#include "render/texture.h"
+#include "render/renderer.h"
+#include "render/shader.h"
 
 #include <iostream>
 
@@ -25,7 +26,7 @@ unsigned int textureInit(Shader& shader) {
     
     if (!data) {
         std::cout << "Failed to load texture" << std::endl;
-        return;
+        return 0;
     }
 
     auto format = (nrChannels == 4) ? GL_RGBA : GL_RGB;

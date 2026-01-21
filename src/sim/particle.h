@@ -7,8 +7,8 @@
 struct Particle {
     glm::vec3 currPosition;
     glm::vec3 prevPosition;
-    float velocity;
-    float acceleration;
+    glm::vec3 velocity;
+    glm::vec3 acceleration;
     float radius;
 };
 #endif
